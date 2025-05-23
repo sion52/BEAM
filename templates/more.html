@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>투자</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/more.css') }}">
+</head>
+<body>
+  <div class="app-container">
+
+    <!-- 헤더 -->
+    <header class="header">
+      <img src="{{ url_for('static', filename='image/clock.png') }}" alt="Clock" class="top-bar">
+      <p class="page-title weight-500">투자</p>
+      <button class="close-btn" onclick="history.back();">
+        <img src="{{ url_for('static', filename='image/close.png') }}" alt="닫기">
+      </button>
+    </header>
+
+    <main class="main-content">
+       <div class="search-bar">
+            <img src="{{ url_for('static', filename='image/search.svg') }}" alt="검색 아이콘" class="search-icon">
+            <input type="text" placeholder="제목, 감독, 배우로 검색">
+       </div>
+        
+        <div class="section-header">
+            <div class="investment-card">
+            <img
+                src="{{ url_for('static', filename='image/hospital.png') }}"
+                alt="슬기로운 포스터"
+            />
+            <div class="investment-info">
+                <div class="title">언젠가는 슬기로운 전공의생활</div>
+                <div class="subtitle">여기에 이정도만</div>
+            </div>
+            <button class="detail-btn disabled" onclick="location.href='/detail'">
+                자세히 보기
+            </button>
+            </div>
+
+            <div class="investment-card">
+            <img
+                src="{{ url_for('static', filename='image/hospital.png') }}"
+                alt="슬기로운 포스터"
+            />
+            <div class="investment-info">
+                <div class="title">언젠가는 슬기로운 전공의생활</div>
+                <div class="subtitle">여기에 이정도만</div>
+            </div>
+            <button class="detail-btn disabled" onclick="location.href='/detail'">
+                자세히 보기
+            </button>
+            </div>
+        </div>
+
+        
+
+
+      
+    <!-- 하단 고정 이미지 -->
+    <img src="{{ url_for('static', filename='image/bar.png') }}" alt="Bottom Clock" class="bottom-bar">
+  </div>
+
+
+</body>
+</html>

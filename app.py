@@ -602,5 +602,9 @@ def clear_delivery():
 def detail():
     return render_template('detail.html')
 
+@app.route('/state')
+def state():
+    return render_template('state.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

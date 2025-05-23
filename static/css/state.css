@@ -1,0 +1,166 @@
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Pretendard-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+}
+
+body {
+  font-family: 'Pretendard-Regular', sans-serif;
+  margin: 0;
+  background-color: #f9f9f9;
+  color: #121212;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;  /* 수평 중앙 정렬 */
+  align-items: start;       /* 수직 정렬: 시작 지점에서 */
+  background-color: #f9f9f9;
+}
+
+.app-container {
+  width: 402px;
+  height: 874px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  flex-direction: column;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.app-container::-webkit-scrollbar {
+  display: none;
+}
+
+.header {
+  position: relative;
+  height: 115px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* 상단 고정 이미지 */
+.top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;  /* 타이틀, 버튼 아래에 깔리게 */
+}
+
+.page-title {
+  font-size: 18px;
+  color: #1c1c1c;
+  margin-top: 70px;
+  margin-bottom: 18px;
+  font-family: 'Pretendard-SemiBold';
+  position: relative;
+  z-index: 2;  /* 이미지 위에 나오게 */
+}
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    width: 402px;
+    height: auto;
+    z-index: 2;
+}
+
+.main-content {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background-color: #F6F6F6;
+}
+
+.invest-box {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  padding: 12px;
+  margin-bottom: 14px;
+}
+
+.invest-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 14px;
+}
+
+.invest-text {
+  flex: 1;
+}
+
+.invest-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.invest-price {
+  font-size: 13px;
+  color: #555;
+  margin-top: 4px;
+}
+
+.invest-status {
+  font-size: 14px;
+  font-family: '
+}
+
+/* ✅ 하단 내비게이션 바 */
+.nav-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 88px;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+/* 각 버튼 */
+.nav-item {
+  width: 76px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 20px 0;
+}
+
+.nav-item img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+/* 가운데 버튼 강조 (active로 설정됨) */
+.nav-item.active {
+  width: 44px;
+  height: 44px;
+  transition: all 0.2s;
+}

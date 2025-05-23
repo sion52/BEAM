@@ -35,7 +35,6 @@ html, body {
   position: relative;
   height: 115px;
   background-color: #fff;
-  border-bottom: 1px solid #eee;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,21 +107,29 @@ html, body {
   margin: 8px 0;
 }
 
-.participants {
-  color: #888;
-  margin: 8px 0;
-}
-
 .red {
   color: #FF4141;
   font-weight: bold;
+  font-size: 24px;
+}
+
+.stats {
+  text-align: right;
+  margin-top: 12px;
+}
+
+.participants {
+  color: #FF4141;
+  margin: 0;
+  font-size: 16px;
 }
 
 .goal {
   font-size: 20px;
   font-weight: bold;
-  margin: 4px 0;
+  margin-top: 6px;
 }
+
 
 .section {
   padding: 20px 16px;
@@ -152,6 +159,8 @@ html, body {
 .investment-info li {
   margin-bottom: 8px;
   font-size: 15px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .invest-btn {

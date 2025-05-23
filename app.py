@@ -114,6 +114,10 @@ def index():
 def login():
     return render_template('login.html')
 
+@app.route('/more')
+def more():
+    return render_template('more.html')
+
 @app.route('/login_kakao', methods=['POST'])
 def login_kakao():
     user_info = request.get_json()

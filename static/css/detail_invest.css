@@ -1,0 +1,142 @@
+body {
+  font-family: 'Pretendard-Regular', sans-serif;
+  margin: 0;
+  background-color: #f9f9f9;
+  color: #121212;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;  /* 수평 중앙 정렬 */
+  align-items: start;       /* 수직 정렬: 시작 지점에서 */
+  background-color: #f9f9f9;
+}
+
+.app-container {
+  width: 402px;
+  height: 874px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  flex-direction: column;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.app-container::-webkit-scrollbar {
+  display: none;
+}
+
+.header {
+  position: relative;
+  height: 115px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* 상단 고정 이미지 */
+.top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;  /* 타이틀, 버튼 아래에 깔리게 */
+}
+
+.page-title {
+  font-size: 18px;
+  color: #1c1c1c;
+  margin-top: 70px;
+  margin-bottom: 18px;
+  font-family: 'Pretendard-SemiBold';
+  position: relative;
+  z-index: 2;  /* 이미지 위에 나오게 */
+}
+
+.close-btn {
+  position: absolute;
+  top: 78px;
+  right: 30px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  z-index: 2;  /* 이미지 위에 나오게 */
+}
+
+.close-btn img {
+  width: 14px;
+  height: 14px;
+}
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    width: 402px;
+    height: auto;
+    z-index: 2;
+}
+
+.poster {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.info {
+  padding: 16px;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+}
+
+.subtitle {
+  color: #555;
+  margin: 8px 0;
+}
+
+.participants {
+  color: #888;
+  margin: 8px 0;
+}
+
+.red {
+  color: #FF4141;
+  font-weight: bold;
+}
+
+.goal {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+.my-film,
+.progress-status,
+.return-status {
+  border-top: 10px solid #f4f4f4;
+  padding: 20px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-film img,
+.progress-status img,
+.return-status img {
+  max-width: 100%;
+  height: auto;
+}

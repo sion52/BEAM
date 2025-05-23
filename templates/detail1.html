@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>투자</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/detail_invest.css') }}"> 
+</head>
+<body>
+  <div class="app-container">
+
+    <!-- 헤더 -->
+    <header class="header">
+      <img src="{{ url_for('static', filename='image/clock.png') }}" alt="Clock" class="top-bar">
+      <p class="page-title weight-500">세부 현황</p>
+      <button class="close-btn" onclick="history.back();">
+        <img src="{{ url_for('static', filename='image/close.png') }}" alt="닫기">
+      </button>
+    </header>
+
+    <img src="{{ url_for('static', filename='image/movie2.png') }}" alt="포스터" class="poster">
+
+    <div class="info">
+      <h2 class="title">전남친 물고기는 어디에 살아야하나요?</h2>
+      <p class="subtitle">“사랑하면 닮는다” 이 말을 대부분 긍정적인 의미로 쓰곤 한다. 하지만 사랑해서 닮아졌을 때 긍정적인 면만 있을까? 사랑해서, 닮아가서, 자신에게 지우기 힘든 부정적인 영향을 주었다면 어떨까.</p>
+      <p class="participants"><span class="red">37</span>명 참여</p>
+      <p class="goal"><strong>3,000,000</strong>원 달성</p>
+    </div>
+
+   <div class="svg-sections">
+        <div class="my-film">
+            <img src="{{ url_for('static', filename='image/myfilm1.svg') }}" alt="내가 투자한 필름">
+        </div>
+        <div class="progress-status">
+            <img src="{{ url_for('static', filename='image/current1.svg') }}" alt="진행 상태">
+        </div>
+        <div class="return-status">
+            <img id="returnImage" src="{{ url_for('static', filename='image/return_with_alarm.svg') }}" alt="투자금 회수 상태">
+        </div>
+
+    </div>
+    
+
+
+
+      
+    <!-- 하단 고정 이미지 -->
+    <img src="{{ url_for('static', filename='image/bar.png') }}" alt="Bottom Clock" class="bottom-bar">
+  </div>
+  <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const returnImage = document.getElementById('returnImage');
+
+            returnImage.addEventListener('click', () => {
+            const confirmed = confirm("12만원의 수익이 발생했습니다.\n회수하시겠습니까?");
+            if (confirmed) {
+                returnImage.src = "{{ url_for('static', filename='image/return1.svg') }}";
+            }
+            });
+        });
+    </script>
+
+
+
+
+</body>
+</html>

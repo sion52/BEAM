@@ -1,0 +1,470 @@
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+font-family: 'NanumSquareNeo';
+src: url("{{ url_for('static', filename='fonts/NanumSquareNeo-Variable.ttf') }}") format("truetype");
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+    font-family: 'NanumSquareNeoHeavy';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.ttf) format("truetype");
+}
+@font-face {
+  font-family: 'Pretendard-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* ✅ 수직 중앙 정렬 추가 */
+  background: #f4f4f4;
+}
+
+.app-container {
+  width: 402px;
+  height: 874px;
+  overflow: hidden; /* 내부 스크롤 처리 */
+  position: relative;
+  background-color: #F6F6F6;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+}
+
+.app-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* 스크롤이 필요한 컨텐츠 감싸기 */
+.scroll-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 150px; /* ✅ 스크롤 여백 추가 */
+}
+.scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;       /* ✅ 적절한 높이 설정 */
+  background-color: white;  /* ✅ 흰 배경 추가 */
+  z-index: 2;
+}
+
+
+.bottom-bar {
+  position: absolute;  /* ✅ fixed -> absolute */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+header {
+position: fixed;
+z-index: 10; /* 추가 */
+width: 352px;
+height: 60px;
+background-color: white;
+display: flex;
+padding: 0 25px; /* ✅ 간격 확보 */
+justify-content: space-between;
+align-items: center;
+box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+margin-top: 50px;
+}
+
+.logo {
+  font-family: 'NanumSquareNeoHeavy', sans-serif;
+  font-weight: bold;
+  color: #FF4141;
+  font-size: 20px;
+  margin-left: 15px;
+}
+
+.coin {
+  background: #FF4141;
+  color: white;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  gap: 6px;
+  margin-left: 180px;
+  cursor: pointer;
+  font-family: 'Pretendard-Bold';
+}
+
+.coin img {
+  width: 13px;
+  height: 13px;
+}
+
+.greeting {
+  margin-top: 100px; /* 헤더랑 겹치지 않게 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #F6F6F6;
+  padding: 50px;
+  font-family: 'Pretendard-Regular', sans-serif;
+
+}
+
+.greeting-left .nickname {
+  font-weight: bold;
+  font-size: 22px;
+  font-family: 'Pretendard-Bold', sans-serif;
+}
+
+.greeting-left .message {
+  font-size: 22px;
+  color: #121212;
+  font-family: 'Pretendard-Regular', sans-serif;
+  margin-top: 4px;
+}
+
+.seed-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
+.investment-list {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.investment-item {
+  flex: 0 0 auto;
+  width: 160px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 10px;
+  text-align: center;
+}
+
+.investment-item img {
+  height: auto;
+  border-radius: 8px;
+}
+
+.detail-btn {
+  background-color: #FF4141;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.title {
+  font-weight: bold;
+  margin-top: 8px;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #888;
+}
+
+.investment-status {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.investment-status img {
+  width: 60px;
+  height: 60px;
+}
+
+
+.seed-section {
+  background: #ffffff;
+  margin: 20px;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0px 10px rgba(0,0,0,0.1);
+}
+
+.seed-scroll {
+  display: flex;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.seed-item {
+  position: relative;
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+}
+
+.seed-item img {
+  width: 50px;
+  height: 50px;
+}
+
+.count {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  background: #FF4141;
+  color: white;
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+  background: #ffffff;
+  margin: 0 22px 20px 22px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0 38px;
+  height: 43px;
+}
+
+.storage-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.storage-item .info {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.storage-item img {
+  width: 50px;
+  height: 50px;
+}
+
+/* ✅ 하단 내비게이션 바 */
+.nav-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 88px;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+/* 각 버튼 */
+.nav-item {
+  width: 76px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 20px 0;
+}
+
+.nav-item img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+/* 가운데 버튼 강조 (active로 설정됨) */
+.nav-item.active {
+  width: 44px;
+  height: 44px;
+  transition: all 0.2s;
+}
+
+/* home.css 에 추가 혹은 수정 */
+.farm {
+  position: relative;    /* 절대위치 자식이 이 박스를 기준으로 삼게 */
+  overflow: hidden;      /* 박스 밖으로 나가지 않도록 */
+}
+.beast {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease;
+}
+
+.ssi {
+  font-family: 'Pretendard-Regular';
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+#ad-popup {
+  display: none; /* 기본은 숨김 */
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* 어두운 배경 */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 300px;
+  width: 70%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content video {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.investment-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  margin: 22px;
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+.investment-card img {
+  width: 100%;
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.investment-info{
+  padding: 16px
+}
+
+.investment-info .title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.investment-info .subtitle {
+  font-size: 13px;
+  color: #999;
+}
+
+.detail-btn {
+  background-color: #ccc;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.detail-btn.disabled {
+  background-color: #ccc;
+  cursor: default;
+  height: 52px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.investment-status-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status-item img {
+  width: 45px;
+  height: 45px;
+  margin-right: 12px;
+}
+
+.text-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+}
+
+.status-title {
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.status-sub {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.status-tag {
+  font-size: 14px;
+  color: #888;
+  white-space: nowrap;
+}

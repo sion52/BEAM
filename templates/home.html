@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BEAM Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/home.css') }}"
+    />
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="scroll-wrapper">
+        <img
+          src="{{ url_for('static', filename='image/clock.png') }}"
+          alt="Top Bar"
+          class="top-bar"
+        />
+        <header>
+          <div>
+            <span class="logo">BEAM</span>
+            <span class="coin" onclick="location.href='/credit'">
+              <img
+                src="{{ url_for('static', filename='image/Vector.png') }}"
+                alt="coin"
+              />
+              <span>{{ credit }}</span>
+            </span>
+          </div>
+        </header>
+
+        <div class="greeting">
+          <div class="greeting-left">
+            <div class="nickname">반가워요, {{ nickname }}님</div>
+            <div class="message">감자가 다 자랐어요!</div>
+          </div>
+          <img
+            src="{{ url_for('static', filename='image/profile.png') }}"
+            alt="profile"
+            width="70"
+          />
+        </div>
+
+        <!-- 투자 목록 섹션 -->
+        <div class="section-header">
+          <span>투자 목록</span>
+          <span class="ssi">더보기 ></span>
+        </div>
+        <div class="investment-card">
+          <img
+            src="{{ url_for('static', filename='image/hospital.png') }}"
+            alt="슬기로운 포스터"
+          />
+          <div class="investment-info">
+            <div class="title">언젠가는 슬기로운 전공의생활</div>
+            <div class="subtitle">여기에 이정도만</div>
+          </div>
+          <button class="detail-btn disabled" onclick="location.href='/detail'">
+            자세히 보기
+          </button>
+        </div>
+
+        <!-- 투자 현황 섹션 -->
+        <div class="section-header">
+          <span>투자 현황</span>
+          <span class="ssi">더보기 ></span>
+        </div>
+        <div class="section">
+          <div class="investment-status-list">
+            <div class="status-item">
+              <img
+                src="{{ url_for('static', filename='image/token.png') }}"
+                alt="아이콘"
+              />
+              <div class="text-group">
+                <div class="status-title">언젠가는 슬기로운 전공의생활</div>
+                <div class="status-sub">어쩌고</div>
+              </div>
+              <div class="status-tag">뭐하는 중</div>
+            </div>
+            <div class="status-item">
+              <img
+                src="{{ url_for('static', filename='image/token.png') }}"
+                alt="아이콘"
+              />
+              <div class="text-group">
+                <div class="status-title">언젠가는 슬기로운 전공의생활</div>
+                <div class="status-sub">어쩌고</div>
+              </div>
+              <div class="status-tag">뭐하는 중</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-bar">
+          <div class="nav-item" onclick="location.href='/store'">
+            <img src="{{ url_for('static', filename='image/store_c.png') }}" />
+          </div>
+          <div class="nav-item active" onclick="location.href='/home'">
+            <img src="{{ url_for('static', filename='image/home.png') }}" />
+          </div>
+          <div class="nav-item" onclick="location.href='/my'">
+            <img src="{{ url_for('static', filename='image/my.png') }}" />
+          </div>
+        </div>
+        <!-- 하단 고정 이미지 -->
+        <img
+          src="{{ url_for('static', filename='image/bar.png') }}"
+          alt="Bottom Clock"
+          class="bottom-bar"
+        />
+
+        <!-- 광고 팝업 -->
+        <div
+          id="ad-popup"
+          style="
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+          "
+        >
+          <div
+            style="
+              background: #fff;
+              padding: 20px;
+              border-radius: 12px;
+              text-align: center;
+            "
+          >
+            <video id="ad-video" width="300" controls>
+              <source
+                src="{{ url_for('static', filename='video.mp4') }}"
+                type="video/mp4"
+              />
+              브라우저가 video 태그를 지원하지 않습니다.
+            </video>
+            <br />
+            <button id="ad-close-btn" style="margin-top: 10px">닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>상세 정보</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/detail.css') }}">
+</head>
+<body>
+  <div class="app-container">
+    <header class="header">
+      <img src="{{ url_for('static', filename='image/clock.png') }}" alt="Clock" class="top-bar">
+      <p class="page-title weight-500">필름 환전소</p>
+      <button class="close-btn" onclick="history.back();">
+        <img src="{{ url_for('static', filename='image/close.png') }}" alt="닫기">
+      </button>
+    </header>
+
+    <img src="{{ url_for('static', filename='image/hospital1.png') }}" alt="포스터" class="poster">
+
+    <div class="info">
+      <h2 class="title">언젠가는 슬기로운 전공의생활</h2>
+      <p class="subtitle">어쩌고 저쩌고 어쩌고 저쩌고</p>
+      <p class="participants"><span class="red">632</span>명 참여</p>
+      <p class="goal"><strong>100,000,000</strong>원 달성</p>
+    </div>
+
+    <div class="section">
+      <h3>상세 정보</h3>
+      <ul class="detail-list">
+        <li><strong>제작사</strong> 에그이즈커밍</li>
+        <li><strong>연출</strong> 이민수, 신원호</li>
+        <li><strong>각본</strong> 김송희, 이우정</li>
+        <li><strong>출연</strong> 고윤정, 신세아, 강유석, 한예지</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h3>줄거리</h3>
+      <p class="synopsis">
+        어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고
+        어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고
+        어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고
+      </p>
+    </div>
+
+    <div class="last_section">
+      <h3>투자 정보</h3>
+      <ul class="investment-info">
+        <li><strong>제작기간</strong> 2023년 10월 - 2024년 5월</li>
+        <li><strong>예상 투자 회수 기간</strong> 알아서 써주셈</li>
+        <li><strong>최소 투자 금액</strong> 알아</li>
+        <li><strong>목표 금액</strong> 알아서</li>
+      </ul>
+    </div>
+  </div>
+    <button class="invest-btn">
+      투자하기 <span class="subtext">??? 필름부터</span>
+    </button>
+    <img src="{{ url_for('static', filename='image/bar.png') }}" alt="Bottom Clock" class="bottom-bar">
+</body>
+</html>

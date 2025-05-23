@@ -612,5 +612,37 @@ def clear_delivery():
 def detail():
     return render_template('detail.html')
 
+@app.route('/invest', methods=['POST'])
+def invest():
+    if 'kakao_id' not in session:
+        return jsonify(success=False, message="로그인이 필요합니다.")
+
+    data = request.get_json()
+    count = int(data.get('count', 0))
+    title = data.get('title')
+
+    user = users_collection.find_one({"kakao_id": session['kakao_id']})
+    if not user:
+        return jsonify(success=False, message="사용자 정보 없음")
+
+    cost_per = 1  # 예: 한 개당 100 필름
+    total_cost = count * cost_per
+
+    if user['credit'] < total_cost:
+        return jsonify(success=False, message="필름이 부족합니다.")
+
+    users_collection.update_one(
+        {"kakao_id": session['kakao_id']},
+        {"$inc": {"credit": -total_cost}}
+    )
+    # 추후 투자 기록 저장 로직도 여기에 추가 가능
+
+    return jsonify(success=True)
+
+
+@app.route('/state')
+def state():
+    return render_template('state.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

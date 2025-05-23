@@ -51,34 +51,28 @@
             </button>
           </div>
         </section>
-
-        <section class="card inventory-card">
           <div class="card-header">
-            <span class="weight-600">내 창고</span>
-            <a href="{{ url_for('storage') }}" class="more-btn weight-400"
-              >더보기 &gt;</a
-            >
+            <span class="weight-600">투자 현황</span>
+            <a href="/state" class="more-btn weight-400">더보기 &gt;</a>
+          </div>
+        <section class="card invest-card">
+          <div class="invest-row">
+            <img src="{{ url_for('static', filename='image/logo_hospital.png') }}" alt="로고" class="invest-logo">
+            <div class="invest-text">
+              <p class="invest-title weight-500">언젠가는 슬기로운 전공의생활</p>
+              <p class="invest-sub">어쩌고</p>
+            </div>
+            <div class="invest-status weight-600">뭐하는 중</div>
           </div>
 
-          {% if food_preview|length > 0 %} {% for item in food_preview %}
-          <div class="item-row">
-            <img
-              src="{{ url_for('static', filename='image/' + item.image) }}"
-              alt="{{ item.name }}"
-              class="item-img"
-            />
-            <div class="item-text">
-              <p class="weight-400">
-                {{ item.name }}<br /><span class="sub-count"
-                  >{{ item.count }}개</span
-                >
-              </p>
+          <div class="invest-row">
+            <img src="{{ url_for('static', filename='image/logo_hospital.png') }}" alt="로고" class="invest-logo">
+            <div class="invest-text">
+              <p class="invest-title weight-500">언젠가는 슬기로운 전공의생활</p>
+              <p class="invest-sub">어쩌고</p>
             </div>
-            <span class="item-price weight-500">개당 {{ item.price }}원</span>
+            <div class="invest-status weight-600">뭐하는 중</div>
           </div>
-          {% endfor %} {% else %}
-          <p class="no-delivery weight-500">창고에 농작물이 없습니다</p>
-          {% endif %}
         </section>
 
         <!-- 환전 완료 모달 -->
@@ -106,7 +100,7 @@
       </main>
 
       <div class="nav-bar">
-        <div class="nav-item" onclick="location.href='/store'">
+        <div class="nav-item" onclick="location.href='/state'">
           <img src="{{ url_for('static', filename='image/store_c.png') }}" />
         </div>
         <div class="nav-item active" onclick="location.href='/home'">

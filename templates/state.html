@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>투자 현황</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/state.css') }}"
+    />
+  </head>
+  <body>
+    <div class="app-container">
+        <header class="header">
+            <img src="{{ url_for('static', filename='image/clock.png') }}" alt="Clock" class="top-bar">
+            <p class="page-title weight-500">투자 현황</p>
+        </header>
+        <main class="main-content">
+            <div class="invest-box">
+            <img
+                src="{{ url_for('static', filename='image/logo_hospital.png') }}"
+                alt="로고"
+                class="invest-logo"
+            />
+            <div class="invest-text">
+                <p class="invest-title">언젠가는 슬기로운 전공의생활</p>
+                <p class="invest-price">100,000원</p>
+            </div>
+            <div class="invest-status">뭐하는 중</div>
+            </div>
+        </main>
+        <div class="nav-bar">
+            <div class="nav-item" onclick="location.href='/store'">
+            <img src="{{ url_for('static', filename='image/store.png') }}" />
+            </div>
+            <div class="nav-item active" onclick="location.href='/home'">
+            <img src="{{ url_for('static', filename='image/home.png') }}" />
+            </div>
+            <div class="nav-item" onclick="location.href='/my'">
+            <img src="{{ url_for('static', filename='image/my.png') }}" />
+            </div>
+        </div>
+              <!-- 하단 고정 이미지 -->
+        <img
+            src="{{ url_for('static', filename='image/bar.png') }}"
+            alt="Bottom Clock"
+            class="bottom-bar"
+        />
+    </div>
+  </body>
+</html>

@@ -45,7 +45,7 @@
         <!-- 투자 목록 섹션 -->
         <div class="section-header">
           <span>투자 목록</span>
-          <span class="ssi">더보기 ></span>
+          <span class="ssi" onclick="location.href='/more'">더보기 ></span>
         </div>
         <div class="investment-card">
           <img
@@ -64,13 +64,13 @@
         <!-- 투자 현황 섹션 -->
         <div class="section-header">
           <span>투자 현황</span>
-          <span class="ssi">더보기 ></span>
+          <span class="ssi" onclick="location.href='/state'">더보기 ></span>
         </div>
         <div class="section">
           <div class="investment-status-list">
             <div class="status-item">
               <img
-                src="{{ url_for('static', filename='image/token.png') }}"
+                src="{{ url_for('static', filename='image/logo_hospital.png') }}"
                 alt="아이콘"
               />
               <div class="text-group">
@@ -81,7 +81,7 @@
             </div>
             <div class="status-item">
               <img
-                src="{{ url_for('static', filename='image/token.png') }}"
+                src="{{ url_for('static', filename='image/logo_hospital.png') }}"
                 alt="아이콘"
               />
               <div class="text-group">
@@ -92,9 +92,8 @@
             </div>
           </div>
         </div>
-
         <div class="nav-bar">
-          <div class="nav-item" onclick="location.href='/store'">
+          <div class="nav-item" onclick="location.href='/state'">
             <img src="{{ url_for('static', filename='image/store_c.png') }}" />
           </div>
           <div class="nav-item active" onclick="location.href='/home'">

@@ -8,9 +8,9 @@
 </head>
 <body>
   <div class="app-container">
+    <img src="{{ url_for('static', filename='image/clock.png') }}" alt="Clock" class="top-bar">
     <header class="header">
-      <img src="{{ url_for('static', filename='image/clock.png') }}" alt="Clock" class="top-bar">
-      <p class="page-title weight-500">필름 환전소</p>
+      <p class="page-title weight-500">상세 정보</p>
       <button class="close-btn" onclick="history.back();">
         <img src="{{ url_for('static', filename='image/close.png') }}" alt="닫기">
       </button>
@@ -20,42 +20,90 @@
 
     <div class="info">
       <h2 class="title">언젠가는 슬기로운 전공의생활</h2>
-      <p class="subtitle">어쩌고 저쩌고 어쩌고 저쩌고</p>
-      <p class="participants"><span class="red">632</span>명 참여</p>
-      <p class="goal"><strong>100,000,000</strong>원 달성</p>
+      <p class="subtitle">오늘도 예측할 수 없는 우리들의 하루</p>
+      <div class="stats">
+        <p class="participants"><span class="red">632</span>명 참여</p>
+        <p class="goal"><strong>100,000,000</strong>원 달성</p>
+      </div>
     </div>
 
     <div class="section">
       <h3>상세 정보</h3>
       <ul class="detail-list">
-        <li><strong>제작사</strong> 에그이즈커밍</li>
-        <li><strong>연출</strong> 이민수, 신원호</li>
-        <li><strong>각본</strong> 김송희, 이우정</li>
-        <li><strong>출연</strong> 고윤정, 신세아, 강유석, 한예지</li>
+        <li>제작사 <strong>에그이즈커밍</strong></li>
+        <li>연출 <strong>이민수, 신원호</strong></li>
+        <li>각본 <strong>김송희, 이우정</strong></li>
+        <li>출연 <strong>고윤정, 신세아, 강유석, 한예지</strong></li>
       </ul>
     </div>
     <div class="section">
       <h3>줄거리</h3>
       <p class="synopsis">
-        어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고
-        어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고
-        어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고어쩌고저쩌고
+        낯설지만 치열한 병원 생활의 첫걸음, 전공의가 된 다섯 명의 청춘들.<br>
+        밤낮 없이 이어지는 당직, 실수와 눈물, 그리고 환자와의 진심 어린 마주침 속에서
+        그들은 서서히 ‘진짜 의사’가 되어간다.<br>
+        고된 수련과정 속에서도 서로를 버팀목 삼아 웃고 우는, 조금은 서툴지만 따뜻한 전공의들의 이야기.
       </p>
     </div>
 
     <div class="last_section">
       <h3>투자 정보</h3>
       <ul class="investment-info">
-        <li><strong>제작기간</strong> 2023년 10월 - 2024년 5월</li>
-        <li><strong>예상 투자 회수 기간</strong> 알아서 써주셈</li>
-        <li><strong>최소 투자 금액</strong> 알아</li>
-        <li><strong>목표 금액</strong> 알아서</li>
+        <li>제작기간 <strong>2023년 10월 ~ 2024년 5월</strong></li>
+        <li>예상 투자 회수 기간 <strong>2025년 12월</strong></li>
+        <li>최소 투자 금액 <strong>추후 공개 예정</strong></li>
+        <li>목표 금액 <strong>추후 공개 예정</strong></li>
       </ul>
     </div>
   </div>
-    <button class="invest-btn">
+    <button class="invest-btn" onclick="openInvestPopup()">
       투자하기 <span class="subtext">??? 필름부터</span>
     </button>
     <img src="{{ url_for('static', filename='image/bar.png') }}" alt="Bottom Clock" class="bottom-bar">
+
+    <!-- 투자 팝업 -->
+    <div id="invest-popup" class="modal-overlay" style="display: none;">
+      <div class="modal-content">
+        <h3 class="modal-title">구매 확인</h3>
+        <p class="modal-body">몇 개를 투자하시겠습니까?</p>
+        <input type="number" id="invest-count" min="1" placeholder="개수 입력" />
+        <div class="modal-buttons">
+          <button class="modal-cancel" onclick="closeInvestPopup()">취소</button>
+          <button class="modal-confirm" onclick="submitInvestment()">투자</button>
+        </div>
+      </div>
+    </div>
 </body>
+<script>
+function openInvestPopup() {
+  document.getElementById("invest-popup").style.display = "flex";
+}
+
+function closeInvestPopup() {
+  document.getElementById("invest-popup").style.display = "none";
+}
+
+function submitInvestment() {
+  const count = parseInt(document.getElementById("invest-count").value);
+  if (isNaN(count) || count <= 0) {
+    alert("올바른 수량을 입력해주세요.");
+    return;
+  }
+
+  fetch('/invest', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ title: "언젠가는 슬기로운 전공의생활", count: count })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      alert(`${count}개 투자 완료!`);
+      location.reload();
+    } else {
+      alert(data.message || "투자 실패");
+    }
+  });
+}
+</script>
 </html>

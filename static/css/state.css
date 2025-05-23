@@ -164,3 +164,15 @@ html, body {
   height: 44px;
   transition: all 0.2s;
 }
+.state-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0px; /* 카드 간 간격 증가 */
+  padding: 30px 0;
+}
+
+.state-icon {
+  width: 360px; /* 크기 증가 */
+  height: auto;
+}

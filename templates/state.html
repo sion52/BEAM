@@ -15,22 +15,22 @@
             <img src="{{ url_for('static', filename='image/clock.png') }}" alt="Clock" class="top-bar">
             <p class="page-title weight-500">투자 현황</p>
         </header>
-        <main class="main-content">
-            <div class="invest-box">
-            <img
-                src="{{ url_for('static', filename='image/logo_hospital.png') }}"
-                alt="로고"
-                class="invest-logo"
-            />
-            <div class="invest-text">
-                <p class="invest-title">언젠가는 슬기로운 전공의생활</p>
-                <p class="invest-price">100,000원</p>
-            </div>
-            <div class="invest-status">뭐하는 중</div>
-            </div>
+        <main class="main-content state-column">
+          <a href="{{ url_for('detail2') }}">
+            <img src="{{ url_for('static', filename='image/state1.svg') }}" class="state-icon">
+          </a>
+          <img src="{{ url_for('static', filename='image/state2.svg') }}" class="state-icon">
+          <img src="{{ url_for('static', filename='image/state3.svg') }}" class="state-icon">
+          <img src="{{ url_for('static', filename='image/state4.svg') }}" class="state-icon">
+          <img src="{{ url_for('static', filename='image/state5.svg') }}" class="state-icon">
+          <a href="{{ url_for('detail1') }}">
+            <img src="{{ url_for('static', filename='image/state6.svg') }}" class="state-icon">
+          </a>
         </main>
+
+
         <div class="nav-bar">
-            <div class="nav-item" onclick="location.href='/store'">
+            <div class="nav-item" onclick="location.href='/state'">
             <img src="{{ url_for('static', filename='image/store.png') }}" />
             </div>
             <div class="nav-item active" onclick="location.href='/home'">

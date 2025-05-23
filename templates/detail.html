@@ -20,7 +20,7 @@
 
     <div class="info">
       <h2 class="title">언젠가는 슬기로운 전공의생활</h2>
-      <p class="subtitle">오늘도 예측할 수 없는 우리들의 하루</p>
+      <p class="subtitle">주연배우 - 고윤정, 정준원, 신시아</p>
       <div class="stats">
         <p class="participants"><span class="red">632</span>명 참여</p>
         <p class="goal"><strong>100,000,000</strong>원 달성</p>
@@ -39,10 +39,7 @@
     <div class="section">
       <h3>줄거리</h3>
       <p class="synopsis">
-        낯설지만 치열한 병원 생활의 첫걸음, 전공의가 된 다섯 명의 청춘들.<br>
-        밤낮 없이 이어지는 당직, 실수와 눈물, 그리고 환자와의 진심 어린 마주침 속에서
-        그들은 서서히 ‘진짜 의사’가 되어간다.<br>
-        고된 수련과정 속에서도 서로를 버팀목 삼아 웃고 우는, 조금은 서툴지만 따뜻한 전공의들의 이야기.
+        '언젠가는 슬기로울' 의사생활을 꿈꾸는 레지던트들이 입덕부정기를 거쳐 성장해 나가는 과정을 담은 '슬기로운 의사생활' 스핀오프 드라마
       </p>
     </div>
 
@@ -50,14 +47,14 @@
       <h3>투자 정보</h3>
       <ul class="investment-info">
         <li>제작기간 <strong>2023년 10월 ~ 2024년 5월</strong></li>
-        <li>예상 투자 회수 기간 <strong>2025년 12월</strong></li>
-        <li>최소 투자 금액 <strong>추후 공개 예정</strong></li>
-        <li>목표 금액 <strong>추후 공개 예정</strong></li>
+        <li>예상 투자 회수 기간 <strong>3년</strong></li>
+        <li>최소 투자 금액 <strong>20 필름</strong></li>
+        <li>목표 금액 <strong>100,000,000원</strong></li>
       </ul>
     </div>
   </div>
     <button class="invest-btn" onclick="openInvestPopup()">
-      투자하기 <span class="subtext">??? 필름부터</span>
+      투자하기 <span class="subtext">20 필름부터</span>
     </button>
     <img src="{{ url_for('static', filename='image/bar.png') }}" alt="Bottom Clock" class="bottom-bar">
 
@@ -66,7 +63,7 @@
       <div class="modal-content">
         <h3 class="modal-title">구매 확인</h3>
         <p class="modal-body">몇 개를 투자하시겠습니까?</p>
-        <input type="number" id="invest-count" min="1" placeholder="개수 입력" />
+        <input type="number" id="invest-count" min="20" placeholder="개수 입력" />
         <div class="modal-buttons">
           <button class="modal-cancel" onclick="closeInvestPopup()">취소</button>
           <button class="modal-confirm" onclick="submitInvestment()">투자</button>
@@ -85,8 +82,8 @@ function closeInvestPopup() {
 
 function submitInvestment() {
   const count = parseInt(document.getElementById("invest-count").value);
-  if (isNaN(count) || count <= 0) {
-    alert("올바른 수량을 입력해주세요.");
+  if (isNaN(count) || count <= 19) {
+    alert("20 필름 이상을 투자할 수 있습니다.");
     return;
   }
 

@@ -8,6 +8,7 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/home.css') }}"
     />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='image/favicon.png') }}">
   </head>
   <body>
     <div class="app-container">
@@ -73,12 +74,9 @@
                 src="{{ url_for('static', filename='image/logo_hospital.png') }}"
                 alt="아이콘"
               />
-              <div class="text-group">
-
-      
+              <div class="text-group">      
                 <div class="status-title">언젠가는 슬기로울 전공의...</div>
                 <div class="status-sub">200필름</div>
-
               </div>
               <div class="status-tag">배급중</div>
             </div>
@@ -88,15 +86,14 @@
                 alt="아이콘"
               />
               <div class="text-group">
-
                 <div class="status-title">전 남친 물고기는 어디에 살...</div>
                 <div class="status-sub">100필름</div>
-
               </div>
               <div class="status-tag">제작완료</div>
             </div>
           </div>
         </div>
+        
         <div class="nav-bar">
           <div class="nav-item" onclick="location.href='/state'">
             <img src="{{ url_for('static', filename='image/store_c.png') }}" />

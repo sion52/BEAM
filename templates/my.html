@@ -6,8 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
+      href="{{ url_for('static', filename='css/home.css') }}"
+    />
+    <link
+      rel="stylesheet"
       href="{{ url_for('static', filename='css/my.css') }}"
     />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='image/favicon.png') }}">
   </head>
   <body>
     <div class="app-container">
@@ -51,29 +56,37 @@
             </button>
           </div>
         </section>
-          <div class="card-header">
-            <span class="weight-600">투자 현황</span>
-            <a href="/state" class="more-btn weight-400">더보기 &gt;</a>
-          </div>
-        <section class="card invest-card">
-          <div class="invest-row">
-            <img src="{{ url_for('static', filename='image/logo_hospital.png') }}" alt="로고" class="invest-logo">
-            <div class="invest-text">
-              <p class="invest-title weight-500">언젠가는 슬기로운 전공의생활</p>
-              <p class="invest-sub">어쩌고</p>
+        <div class="section-header">
+          <span>투자 현황</span>
+          <span class="ssi" onclick="location.href='/state'">더보기 ></span>
+        </div>
+        <div class="section">
+          <div class="investment-status-list">
+            <div class="status-item">
+              <img
+                src="{{ url_for('static', filename='image/logo_hospital.png') }}"
+                alt="아이콘"
+              />
+              <div class="text-group">      
+                <div class="status-title">언젠가는 슬기로울 전공의...</div>
+                <div class="status-sub">200필름</div>
+              </div>
+              <div class="status-tag">배급중</div>
             </div>
-            <div class="invest-status weight-600">뭐하는 중</div>
+            <div class="status-item">
+              <img
+                src="{{ url_for('static', filename='image/logo_bf.png') }}"
+                alt="아이콘"
+              />
+              <div class="text-group">
+                <div class="status-title">전 남친 물고기는 어디에 살...</div>
+                <div class="status-sub">100필름</div>
+              </div>
+              <div class="status-tag">제작완료</div>
+            </div>
           </div>
+        </div>
 
-          <div class="invest-row">
-            <img src="{{ url_for('static', filename='image/logo_hospital.png') }}" alt="로고" class="invest-logo">
-            <div class="invest-text">
-              <p class="invest-title weight-500">언젠가는 슬기로운 전공의생활</p>
-              <p class="invest-sub">어쩌고</p>
-            </div>
-            <div class="invest-status weight-600">뭐하는 중</div>
-          </div>
-        </section>
 
         <!-- 환전 완료 모달 -->
         <div id="successModal" class="modal-overlay" style="display: none">

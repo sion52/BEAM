@@ -5,13 +5,13 @@
   <title>투자</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/detail_invest.css') }}"> 
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='image/favicon.png') }}">
 </head>
 <body>
   <div class="app-container">
-
+    <img src="{{ url_for('static', filename='image/clock.png') }}" alt="Clock" class="top-bar">
     <!-- 헤더 -->
     <header class="header">
-      <img src="{{ url_for('static', filename='image/clock.png') }}" alt="Clock" class="top-bar">
       <p class="page-title weight-500">세부 현황</p>
       <button class="close-btn" onclick="history.back();">
         <img src="{{ url_for('static', filename='image/close.png') }}" alt="닫기">
@@ -23,8 +23,10 @@
     <div class="info">
       <h2 class="title">언젠가는 슬기로운 전공의생활</h2>
       <p class="subtitle">주연배우 - 고윤정, 정준원, 신시아</p>
-      <p class="participants"><span class="red">632</span>명 참여</p>
-      <p class="goal"><strong>100,000,000</strong>원 달성</p>
+      <div class="stats">
+        <p class="participants"><span class="red">632</span>명 참여</p>
+        <p class="goal"><strong>100,000,000</strong>원 달성</p>
+      </div>
     </div>
 
    <div class="svg-sections">

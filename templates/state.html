@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>투자 현황</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='image/favicon.png') }}">
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/state.css') }}"
@@ -13,7 +14,7 @@
     <div class="app-container">
         <header class="header">
             <img src="{{ url_for('static', filename='image/clock.png') }}" alt="Clock" class="top-bar">
-            <p class="page-title weight-500">투자 현황</p>
+            <p class="write">투자 현황</p>
         </header>
         <main class="main-content state-column">
           <a href="{{ url_for('detail2') }}">

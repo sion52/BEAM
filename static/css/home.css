@@ -68,7 +68,6 @@ html, body {
   z-index: 2;
 }
 
-
 .bottom-bar {
   position: absolute;  /* ✅ fixed -> absolute */
   bottom: 0;

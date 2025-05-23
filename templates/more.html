@@ -8,10 +8,9 @@
 </head>
 <body>
   <div class="app-container">
-
     <!-- 헤더 -->
+    <img src="{{ url_for('static', filename='image/clock.png') }}" alt="Clock" class="top-bar">
     <header class="header">
-      <img src="{{ url_for('static', filename='image/clock.png') }}" alt="Clock" class="top-bar">
       <p class="page-title weight-500">투자</p>
       <button class="close-btn" onclick="history.back();">
         <img src="{{ url_for('static', filename='image/close.png') }}" alt="닫기">

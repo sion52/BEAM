@@ -28,37 +28,42 @@ body {
   height: 874px;
   border: 1px solid #ccc;
   background-color: #fff;
-  display: flex;
   flex-direction: column;
-  overflow: hidden;
+  display: flex;
   position: relative;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.app-container::-webkit-scrollbar {
+  display: none;
 }
 
 .header {
-  position: relative;
-  height: 115px;
+  position: fixed;
+  height: 65px;
   background-color: #fff;
-  border-bottom: 1px solid #eee;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
+  margin-top: 50px;
+  width: 402px;
 }
 
 /* 상단 고정 이미지 */
 .top-bar {
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  width: 402px;
   height: auto;
-  z-index: 1;  /* 타이틀, 버튼 아래에 깔리게 */
+  z-index: 11;  /* 타이틀, 버튼 아래에 깔리게 */
+  height: 51px;
 }
 
 .page-title {
   font-size: 18px;
   color: #1c1c1c;
-  margin-top: 70px;
   margin-bottom: 18px;
   font-family: 'Pretendard-SemiBold';
   position: relative;
@@ -67,7 +72,6 @@ body {
 
 .close-btn {
   position: absolute;
-  top: 78px;
   right: 30px;
   background: none;
   border: none;
@@ -83,16 +87,18 @@ body {
   height: 14px;
 }
 
-
-
 .bottom-bar {
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    left: 0;
-    width: 100%;
+    width: 402px;
     height: auto;
     z-index: 2;
 }
+
+.main-content{
+  margin-top: 115px;
+}
+
 .search-bar {
   position: relative;
   padding: 0 20px;
@@ -102,7 +108,7 @@ body {
 
 .search-bar input {
   width: 100%;
-  padding: 12px 45px 12px 40px;
+  padding: 0 45px 0 40px;
   border-radius: 999px;
   border: none;
   background: #ffffff;
@@ -110,6 +116,7 @@ body {
   font-size: 14px;
   font-family: 'Pretendard-Regular';
   color: #333;
+  height: 56px;
 }
 
 .search-bar input::placeholder {

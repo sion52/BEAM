@@ -117,6 +117,12 @@ def login():
 @app.route('/more')
 def more():
     return render_template('more.html')
+@app.route('/detail1')
+def detail1():
+    return render_template('detail1.html')
+@app.route('/detail2')
+def detail2():
+    return render_template('detail2.html')
 
 @app.route('/login_kakao', methods=['POST'])
 def login_kakao():

@@ -3,7 +3,7 @@
 - 대상
 - 2025년 5월 23일 ~ 2025년 5월 24일
 
-# 'SEEDO'
+# 'BEAM'
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/13ef3db2-eb1e-42a5-a4a7-1881a62fa47b" />
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/dc663e31-a5bd-445c-97eb-da6800c9d75a" />
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/d8d4d69e-3f8b-4b39-a4d2-a945cb5ca0c1" />
@@ -18,6 +18,8 @@
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/e6f85639-9118-46bd-8191-b962409764fe" />
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/633aeb1c-b29d-4b28-8080-7ce92a66d32f" />
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/ddfb7470-5124-47c6-8057-5d00aea5d025" />
+<img width="1684" height="1190" alt="Image" src="https://github.com/user-attachments/assets/6d0d9133-2bc9-465e-8d7e-bf7472922044" />
+<img width="1684" height="1190" alt="Image" src="https://github.com/user-attachments/assets/8182f102-a9bc-4a10-b25f-31cc2ab10cc7" />
 
 ## Tech Stack
 ### Front end
